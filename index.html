@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+	<head>
+		<meta charset="utf-8">
+		<title>Kakaha</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+		<script type="text/javascript "src="main.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div>
+			<table >
+				<tr>
+					<th>User id</th>
+					<th>Email</th>
+					<th>Role</th>
+				</tr >
+<!--				<tr ng-repeat="person in persons"> !-->
+					<div ng-controller='myController as person'>
+						<td>{{person.name}}</td>
+						<td>{{person.email}}</td>
+						<td>{{person.role}}</td>
+					</div>
+				</tr>
+			</table >
+		</div>
+	</body >
+</html>
