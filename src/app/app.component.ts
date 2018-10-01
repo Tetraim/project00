@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [
+    HttpClient
+  ],
 })
+
 export class AppComponent {
   title = 'users-spa';
   users = [{
@@ -24,21 +29,15 @@ export class AppComponent {
 		role:'2'
 	}
 	]
-  constructor() { console.log('123123123') }
+
+  constructor(private http: HttpClient) { 
+  	this.http.get('http://localhost:3000/api/v1/users').subscribe(resp => {
+  		console.log('123123123')
+  		console.log resp
+  	})
+  }
+
+  ngOnInit() {
+  	console.log '!!@3', this.http.get('http://example.com')
+  }
 }
-
-
-// export class HeroesComponent implements OnInit {
- 
-//   heroes = HEROES;
-//   selectedHero: Hero;
- 
-  
- 
-//   ngOnInit() {
-//   }
- 
-//   onSelect(hero: Hero): void {
-//     this.selectedHero = hero;
-//   }
-// }
