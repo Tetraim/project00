@@ -1,9 +1,24 @@
 var app = angular.module('app', []);
-app.controller('myController', function () {
-	this.name="1";
-	this.email="test@test.com";
-	this.role="admin";
-	});
+app.controller('myController', function ($scope) {
+
+	$scope.users = [{
+		name:'users',
+		email:'test@test.com',
+		role:'admin'
+	},
+	{
+		name:'',
+		email:'',
+		role:''
+
+	},
+	{
+		name:'',
+		email:'',
+		role:''
+	}
+	]
+});
 	
 
 //var myCtrl= angular.module('myCtrlApp', []);
